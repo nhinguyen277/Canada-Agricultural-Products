@@ -1,0 +1,34 @@
+extends common/layout
+
+block layout-content 
+  div.image-container 
+        img.banner(src="/img/Apple_orchard_101822.png" alt="Banner")        
+          //-https://cals.ncsu.edu/wp-content/uploads/2022/10/Apple_orchard_101822.png (apple farm)
+        h2.text We provide products from high quality farms to produce completely natural and safe products for consumers. 
+  div.index-main
+    h1.page-title Products
+    div.product-container
+      each pro in product
+        div.product
+            img.img-product(src="/img/" + pro.image + ".jpg" alt=pro.name) 
+            //-https://bakeitwithlove.com/wp-content/uploads/2022/10/yukon-gold-vs-yellow-potatoes-vs-gold-potatoes-sq.jpg
+
+            //-https://lh3.googleusercontent.com/proxy/5uumQIxlrTeeUKJVntpEY9zrlPuQNYJETxu7vqte6NXg6XyeyAShwtfy2QPhOYNYBBHw5TWmz68a4hruGKJW9kNX  (wendy straberry)
+
+            //-https://bivianodirect.com.au/wp-content/uploads/2020/07/products-A6D0DF72-8722-474B-BA93-45071A0C7559_d66172ae-b946-4e93-9fd9-f72707da520a.jpg  (red beets)
+
+            //-https://s3.us-west-2.amazonaws.com/www.gethomesome.com/productimages/honeycrisp-apple.jpg
+
+            h2.title 
+                a(href="#") #{pro.name} 
+            h3.price Price: CA$ #{pro.price} 
+            p Oringin: #{pro.origin}
+            a.view.link-box(href=`/detail?linkId=${pro._id}`) View
+  div.index-main 
+    h1.page-title Comments
+    each com in comment
+      div.comment-container
+        div.comment 
+          h4 #{com.fname} #{com.lname} 
+          p #{com.comment}
+    a.link-box.comment-add(href="/comment") Leave A Comment

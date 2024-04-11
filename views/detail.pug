@@ -1,0 +1,19 @@
+extends common/layout 
+
+block layout-content
+  div.index-main
+    h1.page-title Detail
+    div.item-container 
+      div.image-container
+        img.image-item(src="/img/" + getLink.image + ".jpg" alt=getLink.name) 
+      div.content-item 
+        h1.title 
+          a(href="#") #{getLink.name} 
+        h3.price-item Price: CA$ #{getLink.price} 
+        p Oringin: #{getLink.origin}
+        p Description: #{getLink.description}
+        a.add.link-box(href="/") Add To Card
+
+  
+
+

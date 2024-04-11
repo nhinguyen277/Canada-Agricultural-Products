@@ -1,0 +1,16 @@
+extends common/layout
+
+block layout-content 
+    div.content 
+        h1.page-title Leave Your Comments
+        form(method="post", action="/comment/submit")
+            div 
+                label(for="fname") First Name 
+                input(type="text", id="firstname", name="fname", placeholder="Angelina")
+            div 
+                label(for="lname") Link text: 
+                input(type="text", id="lastname", name="lname", placeholder="Jolie")
+            div 
+                label(for="comment") Comment:
+                textarea(id="comment-content", name="comment", rows="4", cols="50", placeholder="leave comment here!")
+            button(type="submit") Add Comment
